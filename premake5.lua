@@ -32,6 +32,7 @@ project "GLFW"
 	}
 
 	filter "system:linux"
+		linkgroups "On"
 		pic "On"
 
 		files {
@@ -49,6 +50,14 @@ project "GLFW"
 
 		defines {
 			"_GLFW_X11"
+		}
+
+		links {
+			"Xrandr",
+			"Xi",
+			"GL",
+			"X11",
+			"dl"
 		}
 
 	filter "system:windows"
